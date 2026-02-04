@@ -269,3 +269,180 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('ðŸŠâ€â™€ï¸ðŸš´â€â™€ï¸ðŸƒâ€â™€ï¸ Fernanda Tapia Santander - Website loaded successfully!');
+
+// ===== LANGUAGE SWITCHER =====
+const langBtns = document.querySelectorAll('.lang-btn');
+const translatableElements = document.querySelectorAll('[data-es][data-en]');
+
+// Translations for static content
+const translations = {
+    es: {
+        heroSubtitle: 'Triatleta Semi-Pro  Profesora de Educación Física  Licenciada en Educación',
+        heroDescription: 'Ex Seleccionada Nacional de Baloncesto y Ciclismo en Ruta. Profesora de Educación Física dedicada a impulsar el rendimiento deportivo.',
+        btnServices: 'Mis Servicios',
+        btnContact: 'Contáctame',
+        statDisciplines: 'Disciplinas',
+        statYears: 'Años en Deporte',
+        statCompetitions: 'Competencias',
+        aboutTag: 'Conóceme',
+        aboutTitle: 'Sobre Mí',
+        aboutSubtitle: 'Pasión por el deporte de alto rendimiento',
+        careerTag: 'Mi Historia',
+        careerTitle: 'Trayectoria Deportiva',
+        sponsorsTag: 'Confían en mí',
+        sponsorsTitle: 'Mis Auspiciadores',
+        servicesTag: 'Lo que ofrezco',
+        servicesTitle: 'Mis Servicios',
+        servicesSubtitle: 'Servicios profesionales para mejorar tu rendimiento deportivo',
+        galleryTag: 'Momentos',
+        galleryTitle: 'Galería',
+        contactTag: 'Hablemos',
+        contactTitle: 'Contacto',
+        contactDescription: '¿Listo para llevar tu rendimiento al siguiente nivel? Contáctame y comencemos a trabajar juntos en tus objetivos deportivos.',
+        formName: 'Nombre completo',
+        formEmail: 'Email',
+        formPhone: 'Teléfono (opcional)',
+        formService: 'Servicio de interés',
+        formMessage: 'Tu mensaje',
+        formSubmit: 'Enviar mensaje',
+        scroll: 'Scroll'
+    },
+    en: {
+        heroSubtitle: 'Semi-Pro Triathlete  Physical Education Teacher  Education Graduate',
+        heroDescription: 'Former National Team Member in Basketball and Road Cycling. Physical Education Teacher dedicated to boosting athletic performance.',
+        btnServices: 'My Services',
+        btnContact: 'Contact Me',
+        statDisciplines: 'Disciplines',
+        statYears: 'Years in Sports',
+        statCompetitions: 'Competitions',
+        aboutTag: 'Meet Me',
+        aboutTitle: 'About Me',
+        aboutSubtitle: 'Passion for high performance sports',
+        careerTag: 'My Story',
+        careerTitle: 'Sports Career',
+        sponsorsTag: 'They Trust Me',
+        sponsorsTitle: 'My Sponsors',
+        servicesTag: 'What I Offer',
+        servicesTitle: 'My Services',
+        servicesSubtitle: 'Professional services to improve your athletic performance',
+        galleryTag: 'Moments',
+        galleryTitle: 'Gallery',
+        contactTag: 'Let\'s Talk',
+        contactTitle: 'Contact',
+        contactDescription: 'Ready to take your performance to the next level? Contact me and let\'s start working together on your athletic goals.',
+        formName: 'Full name',
+        formEmail: 'Email',
+        formPhone: 'Phone (optional)',
+        formService: 'Service of interest',
+        formMessage: 'Your message',
+        formSubmit: 'Send message',
+        scroll: 'Scroll'
+    }
+};
+
+function switchLanguage(lang) {
+    // Update active button
+    langBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Update nav links
+    translatableElements.forEach(el => {
+        el.textContent = el.dataset[lang];
+    });
+    
+    // Update other content
+    const t = translations[lang];
+    
+    // Hero section
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) heroSubtitle.textContent = t.heroSubtitle;
+    
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) heroDesc.textContent = t.heroDescription;
+    
+    // Buttons
+    const btnPrimary = document.querySelector('.hero-buttons .btn-primary');
+    if (btnPrimary) btnPrimary.textContent = t.btnServices;
+    
+    const btnSecondary = document.querySelector('.hero-buttons .btn-secondary');
+    if (btnSecondary) btnSecondary.textContent = t.btnContact;
+    
+    // Stats
+    const statLabels = document.querySelectorAll('.stat-label');
+    if (statLabels.length >= 3) {
+        statLabels[0].textContent = t.statDisciplines;
+        statLabels[1].textContent = t.statYears;
+        statLabels[2].textContent = t.statCompetitions;
+    }
+    
+    // Section tags and titles
+    const sectionTags = document.querySelectorAll('.section-tag');
+    const sectionTitles = document.querySelectorAll('.section-title');
+    
+    // About
+    if (sectionTags[0]) sectionTags[0].textContent = t.aboutTag;
+    if (sectionTitles[0]) sectionTitles[0].textContent = t.aboutTitle;
+    const aboutH3 = document.querySelector('.about-text h3');
+    if (aboutH3) aboutH3.textContent = t.aboutSubtitle;
+    
+    // Career
+    if (sectionTags[1]) sectionTags[1].textContent = t.careerTag;
+    if (sectionTitles[1]) sectionTitles[1].textContent = t.careerTitle;
+    
+    // Sponsors
+    if (sectionTags[2]) sectionTags[2].textContent = t.sponsorsTag;
+    if (sectionTitles[2]) sectionTitles[2].textContent = t.sponsorsTitle;
+    
+    // Services
+    if (sectionTags[3]) sectionTags[3].textContent = t.servicesTag;
+    if (sectionTitles[3]) sectionTitles[3].textContent = t.servicesTitle;
+    const servicesSubtitle = document.querySelector('.services .section-subtitle');
+    if (servicesSubtitle) servicesSubtitle.textContent = t.servicesSubtitle;
+    
+    // Gallery
+    if (sectionTags[4]) sectionTags[4].textContent = t.galleryTag;
+    if (sectionTitles[4]) sectionTitles[4].textContent = t.galleryTitle;
+    
+    // Contact
+    if (sectionTags[5]) sectionTags[5].textContent = t.contactTag;
+    if (sectionTitles[5]) sectionTitles[5].textContent = t.contactTitle;
+    const contactDesc = document.querySelector('.contact-info p');
+    if (contactDesc) contactDesc.textContent = t.contactDescription;
+    
+    // Form labels
+    const formLabels = document.querySelectorAll('.form-group label');
+    if (formLabels.length >= 5) {
+        formLabels[0].textContent = t.formName;
+        formLabels[1].textContent = t.formEmail;
+        formLabels[2].textContent = t.formPhone;
+        formLabels[3].textContent = t.formService;
+        formLabels[4].textContent = t.formMessage;
+    }
+    
+    const submitBtn = document.querySelector('.submit-btn span');
+    if (submitBtn) submitBtn.textContent = t.formSubmit;
+    
+    // Scroll indicator
+    const scrollText = document.querySelector('.scroll-indicator span');
+    if (scrollText) scrollText.textContent = t.scroll;
+    
+    // Save preference
+    localStorage.setItem('preferredLang', lang);
+}
+
+// Event listeners for language buttons
+langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        switchLanguage(btn.dataset.lang);
+    });
+});
+
+// Load saved language preference
+const savedLang = localStorage.getItem('preferredLang');
+if (savedLang) {
+    switchLanguage(savedLang);
+}
