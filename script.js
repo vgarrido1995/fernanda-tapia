@@ -1,4 +1,4 @@
-// ===== NAVBAR SCROLL EFFECT =====
+﻿// ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -156,18 +156,18 @@ contactForm.addEventListener('submit', async (e) => {
     }
     
     // 2. Create WhatsApp message
-    const whatsappMessage = `¡Hola Fernanda! 👋%0A%0A` +
+    const whatsappMessage = `Â¡Hola Fernanda! ðŸ‘‹%0A%0A` +
         `*Nombre:* ${name}%0A` +
         `*Email:* ${email}%0A` +
-        `${phone ? `*Teléfono:* ${phone}%0A` : ''}` +
-        `*Servicio de interés:* ${service}%0A%0A` +
+        `${phone ? `*TelÃ©fono:* ${phone}%0A` : ''}` +
+        `*Servicio de interÃ©s:* ${service}%0A%0A` +
         `*Mensaje:*%0A${message}`;
     
     // 3. Open WhatsApp
     window.open(`https://wa.me/56992313861?text=${whatsappMessage}`, '_blank');
     
     // Reset form and button
-    submitBtn.innerHTML = '<span>¡Mensaje enviado!</span><i class="fas fa-check"></i>';
+    submitBtn.innerHTML = '<span>Â¡Mensaje enviado!</span><i class="fas fa-check"></i>';
     setTimeout(() => {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
@@ -268,7 +268,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-console.log('🏊‍♀️🚴‍♀️🏃‍♀️ Fernanda Tapia Santander - Website loaded successfully!');
+console.log('ðŸŠâ€â™€ï¸ðŸš´â€â™€ï¸ðŸƒâ€â™€ï¸ Fernanda Tapia Santander - Website loaded successfully!');
 
 // ===== LANGUAGE SWITCHER =====
 const langBtns = document.querySelectorAll('.lang-btn');
@@ -277,32 +277,32 @@ const translatableElements = document.querySelectorAll('[data-es][data-en]');
 // Translations for static content
 const translations = {
     es: {
-        heroSubtitle: 'Triatleta Semi-Pro  Profesora de Educaci�n F�sica  Licenciada en Educaci�n',
-        heroDescription: 'Ex Seleccionada Nacional de Baloncesto y Ciclismo en Ruta. Profesora de Educaci�n F�sica dedicada a impulsar el rendimiento deportivo.',
+        heroSubtitle: 'Triatleta Semi-Pro  Profesora de Educación Física  Licenciada en Educación',
+        heroDescription: 'Ex Seleccionada Nacional de Baloncesto y Ciclismo en Ruta. Profesora de Educación Física dedicada a impulsar el rendimiento deportivo.',
         btnServices: 'Mis Servicios',
-        btnContact: 'Cont�ctame',
+        btnContact: 'Contáctame',
         statDisciplines: 'Disciplinas',
-        statYears: 'A�os en Deporte',
+        statYears: 'Años en Deporte',
         statCompetitions: 'Competencias',
-        aboutTag: 'Con�ceme',
-        aboutTitle: 'Sobre M�',
-        aboutSubtitle: 'Pasi�n por el deporte de alto rendimiento',
+        aboutTag: 'Conóceme',
+        aboutTitle: 'Sobre Mí',
+        aboutSubtitle: 'Pasión por el deporte de alto rendimiento',
         careerTag: 'Mi Historia',
         careerTitle: 'Trayectoria Deportiva',
-        sponsorsTag: 'Conf�an en m�',
+        sponsorsTag: 'Confían en mí',
         sponsorsTitle: 'Mis Auspiciadores',
         servicesTag: 'Lo que ofrezco',
         servicesTitle: 'Mis Servicios',
         servicesSubtitle: 'Servicios profesionales para mejorar tu rendimiento deportivo',
         galleryTag: 'Momentos',
-        galleryTitle: 'Galer�a',
+        galleryTitle: 'Galería',
         contactTag: 'Hablemos',
         contactTitle: 'Contacto',
-        contactDescription: '�Listo para llevar tu rendimiento al siguiente nivel? Cont�ctame y comencemos a trabajar juntos en tus objetivos deportivos.',
+        contactDescription: '¿Listo para llevar tu rendimiento al siguiente nivel? Contáctame y comencemos a trabajar juntos en tus objetivos deportivos.',
         formName: 'Nombre completo',
         formEmail: 'Email',
-        formPhone: 'Tel�fono (opcional)',
-        formService: 'Servicio de inter�s',
+        formPhone: 'Teléfono (opcional)',
+        formService: 'Servicio de interés',
         formMessage: 'Tu mensaje',
         formSubmit: 'Enviar mensaje',
         scroll: 'Scroll'
@@ -441,8 +441,4 @@ langBtns.forEach(btn => {
     });
 });
 
-// Load saved language preference
-const savedLang = localStorage.getItem('preferredLang');
-if (savedLang) {
-    switchLanguage(savedLang);
-}
+// Always start in Spanish (default)
