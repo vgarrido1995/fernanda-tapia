@@ -1,8 +1,422 @@
-﻿// ===== NAVBAR SCROLL EFFECT =====
+// Translations for Spanish and English
+const translations = {
+    es: {
+        // Navigation
+        'nav-inicio': 'Inicio',
+        'nav-sobre-mi': 'Sobre Mí',
+        'nav-trayectoria': 'Trayectoria',
+        'nav-sponsors': 'Sponsors',
+        'nav-servicios': 'Servicios',
+        'nav-galeria': 'Galería',
+        'nav-contacto': 'Contacto',
+        
+        // Hero
+        'hero-subtitle': 'Triatleta Semi-Pro · Profesora de Educación Física · Licenciada en Educación',
+        'hero-description': 'Ex Seleccionada Nacional de Baloncesto y Ciclismo en Ruta. Profesora de Educación Física dedicada a impulsar el rendimiento deportivo.',
+        'hero-btn-services': 'Mis Servicios',
+        'hero-btn-contact': 'Contáctame',
+        'stat-disciplines': 'Disciplinas',
+        'stat-years': 'Años en Deporte',
+        'stat-competitions': 'Competencias',
+        
+        // About
+        'about-tag': 'Conóceme',
+        'about-title': 'Sobre Mí',
+        'about-subtitle': 'Pasión por el deporte de alto rendimiento',
+        'about-p1': 'Desde los 11 años, he estado involucrada en el mundo del deporte. Comencé mi camino en el baloncesto, y a los 14 años logré llegar al alto rendimiento, siendo seleccionada nacional.',
+        'about-p2': 'Durante mi trayectoria en el baloncesto, tuve el honor de representar a mi país en varios torneos internacionales, como los Sudamericanos, los Juegos Sudamericanos, la Copa América y el Mundial, experiencias que me han marcado profundamente.',
+        'about-p3': 'Más adelante, descubrí el ciclismo de ruta y me enamoré de esta disciplina. Participé en varias Vueltas Nacionales y conseguí la medalla de plata en la prueba de contrarreloj en el Campeonato Nacional, lo que me permitió formar parte de la selección nacional para el Panamericano específico de ruta.',
+        'about-p4': 'Hoy en día, estoy lista para un nuevo desafío. Mi objetivo es cambiar de rumbo e involucrarme en el triatlón, una disciplina que me motiva y me entusiasma para seguir creciendo como atleta.',
+        'about-dob-label': 'Fecha de Nacimiento',
+        'about-dob-value': '28 de Marzo, 1993',
+        'about-nationality-label': 'Nacionalidad',
+        'about-nationality-value': 'Chilena',
+        'about-profession-label': 'Profesión',
+        'about-profession-value': 'Profesora de Educación Física',
+        'experience-years': 'años de experiencia',
+        
+        // Career
+        'career-tag': 'Mi Historia',
+        'career-title': 'Trayectoria Deportiva',
+        'tab-triatlon': 'Triatlón',
+        'tab-ciclismo': 'Ciclismo',
+        'tab-baloncesto': 'Baloncesto',
+        'triatlon-badge': 'Semi-Pro - Categoría 30-34 años',
+        'cycling-badge': 'Ex Seleccionada Nacional',
+        'basketball-badge': 'Ex Seleccionada Nacional',
+        'objectives-title': 'Calendario y Objetivos 2026-2027',
+        
+        // Sponsors
+        'sponsors-tag': 'Confían en mí',
+        'sponsors-title': 'Mis Auspiciadores',
+        
+        // Services
+        'services-tag': 'Lo que ofrezco',
+        'services-title': 'Mis Servicios',
+        'services-subtitle': 'Servicios profesionales para mejorar tu rendimiento deportivo',
+        'service1-title': 'Preparación Física',
+        'service1-desc': 'Entrenamiento personalizado enfocado en mejorar tu condición física, fuerza, resistencia y flexibilidad para alcanzar tus objetivos deportivos.',
+        'service1-f1': 'Evaluación inicial completa',
+        'service1-f2': 'Plan de entrenamiento personalizado',
+        'service1-f3': 'Seguimiento y ajustes continuos',
+        'service1-f4': 'Enfoque en prevención de lesiones',
+        'service2-title': 'Bikefit Profesional',
+        'service2-desc': 'Ajuste biomecánico profesional de tu bicicleta para optimizar rendimiento, comodidad y prevenir lesiones. Ideal para ciclistas y triatletas.',
+        'service2-f1': 'Análisis biomecánico completo',
+        'service2-f2': 'Ajuste de posición óptima',
+        'service2-f3': 'Recomendaciones de equipamiento',
+        'service2-f4': 'Seguimiento post-ajuste',
+        'service3-title': 'Entrenamiento Triatlón',
+        'service3-desc': 'Coaching integral para triatletas de todos los niveles. Planificación de las tres disciplinas con enfoque en tu desarrollo progresivo.',
+        'service3-f1': 'Natación, ciclismo y carrera',
+        'service3-f2': 'Planificación de temporada',
+        'service3-f3': 'Preparación para competencias',
+        'service3-f4': 'Nutrición y recuperación',
+        'service-btn': 'Consultar',
+        'popular': 'Popular',
+        
+        // Gallery
+        'gallery-tag': 'Momentos',
+        'gallery-title': 'Galería',
+        
+        // Contact
+        'contact-tag': 'Hablemos',
+        'contact-title': 'Contacto',
+        'contact-desc': '¿Listo para llevar tu rendimiento al siguiente nivel? Contáctame y comencemos a trabajar juntos en tus objetivos deportivos.',
+        'form-name': 'Nombre completo',
+        'form-email': 'Email',
+        'form-phone': 'Teléfono (opcional)',
+        'form-service': 'Servicio de interés',
+        'form-message': 'Tu mensaje',
+        'form-submit': 'Enviar mensaje',
+        'form-opt1': 'Preparación Física',
+        'form-opt2': 'Bikefit Profesional',
+        'form-opt3': 'Entrenamiento Triatlón',
+        'form-opt4': 'Otro',
+        
+        // Footer
+        'footer-tagline': 'Triatleta · Entrenadora · Preparadora Física',
+        'footer-rights': '2026 Fernanda Tapia Santander. Todos los derechos reservados.'
+    },
+    en: {
+        // Navigation
+        'nav-inicio': 'Home',
+        'nav-sobre-mi': 'About Me',
+        'nav-trayectoria': 'Career',
+        'nav-sponsors': 'Sponsors',
+        'nav-servicios': 'Services',
+        'nav-galeria': 'Gallery',
+        'nav-contacto': 'Contact',
+        
+        // Hero
+        'hero-subtitle': 'Semi-Pro Triathlete · Physical Education Teacher · Education Graduate',
+        'hero-description': 'Former National Team Member in Basketball and Road Cycling. Physical Education Teacher dedicated to boosting sports performance.',
+        'hero-btn-services': 'My Services',
+        'hero-btn-contact': 'Contact Me',
+        'stat-disciplines': 'Disciplines',
+        'stat-years': 'Years in Sports',
+        'stat-competitions': 'Competitions',
+        
+        // About
+        'about-tag': 'Get to Know Me',
+        'about-title': 'About Me',
+        'about-subtitle': 'Passion for high-performance sports',
+        'about-p1': 'Since the age of 11, I have been involved in the world of sports. I started my path in basketball, and at 14 I reached high performance level, becoming a national team member.',
+        'about-p2': 'During my basketball career, I had the honor of representing my country in several international tournaments, such as the South Americans, the South American Games, the Copa America, and the World Championship, experiences that have marked me deeply.',
+        'about-p3': 'Later, I discovered road cycling and fell in love with this discipline. I participated in several National Tours and won the silver medal in the time trial at the National Championship, which allowed me to be part of the national team for the Pan American Road Specific.',
+        'about-p4': 'Today, I am ready for a new challenge. My goal is to change direction and get involved in triathlon, a discipline that motivates and excites me to continue growing as an athlete.',
+        'about-dob-label': 'Date of Birth',
+        'about-dob-value': 'March 28, 1993',
+        'about-nationality-label': 'Nationality',
+        'about-nationality-value': 'Chilean',
+        'about-profession-label': 'Profession',
+        'about-profession-value': 'Physical Education Teacher',
+        'experience-years': 'years of experience',
+        
+        // Career
+        'career-tag': 'My Story',
+        'career-title': 'Sports Career',
+        'tab-triatlon': 'Triathlon',
+        'tab-ciclismo': 'Cycling',
+        'tab-baloncesto': 'Basketball',
+        'triatlon-badge': 'Semi-Pro - Category 30-34 years',
+        'cycling-badge': 'Former National Team Member',
+        'basketball-badge': 'Former National Team Member',
+        'objectives-title': 'Calendar and Objectives 2026-2027',
+        
+        // Sponsors
+        'sponsors-tag': 'They Trust Me',
+        'sponsors-title': 'My Sponsors',
+        
+        // Services
+        'services-tag': 'What I Offer',
+        'services-title': 'My Services',
+        'services-subtitle': 'Professional services to improve your sports performance',
+        'service1-title': 'Physical Preparation',
+        'service1-desc': 'Personalized training focused on improving your physical condition, strength, endurance, and flexibility to achieve your sports goals.',
+        'service1-f1': 'Complete initial assessment',
+        'service1-f2': 'Personalized training plan',
+        'service1-f3': 'Continuous monitoring and adjustments',
+        'service1-f4': 'Focus on injury prevention',
+        'service2-title': 'Professional Bikefit',
+        'service2-desc': 'Professional biomechanical adjustment of your bike to optimize performance, comfort, and prevent injuries. Ideal for cyclists and triathletes.',
+        'service2-f1': 'Complete biomechanical analysis',
+        'service2-f2': 'Optimal position adjustment',
+        'service2-f3': 'Equipment recommendations',
+        'service2-f4': 'Post-adjustment follow-up',
+        'service3-title': 'Triathlon Training',
+        'service3-desc': 'Comprehensive coaching for triathletes of all levels. Planning of the three disciplines with focus on your progressive development.',
+        'service3-f1': 'Swimming, cycling, and running',
+        'service3-f2': 'Season planning',
+        'service3-f3': 'Competition preparation',
+        'service3-f4': 'Nutrition and recovery',
+        'service-btn': 'Inquire',
+        'popular': 'Popular',
+        
+        // Gallery
+        'gallery-tag': 'Moments',
+        'gallery-title': 'Gallery',
+        
+        // Contact
+        'contact-tag': 'Let\'s Talk',
+        'contact-title': 'Contact',
+        'contact-desc': 'Ready to take your performance to the next level? Contact me and let\'s start working together on your sports goals.',
+        'form-name': 'Full name',
+        'form-email': 'Email',
+        'form-phone': 'Phone (optional)',
+        'form-service': 'Service of interest',
+        'form-message': 'Your message',
+        'form-submit': 'Send message',
+        'form-opt1': 'Physical Preparation',
+        'form-opt2': 'Professional Bikefit',
+        'form-opt3': 'Triathlon Training',
+        'form-opt4': 'Other',
+        
+        // Footer
+        'footer-tagline': 'Triathlete · Coach · Physical Trainer',
+        'footer-rights': '2026 Fernanda Tapia Santander. All rights reserved.'
+    }
+};
+
+let currentLang = 'es';
+
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('preferredLang', lang);
+    
+    // Update nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const key = link.getAttribute('data-' + lang);
+        if (key) link.textContent = key;
+    });
+    
+    // Update hero subtitle
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) heroSubtitle.textContent = translations[lang]['hero-subtitle'];
+    
+    // Update hero description
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) heroDesc.textContent = translations[lang]['hero-description'];
+    
+    // Update hero buttons
+    const heroButtons = document.querySelectorAll('.hero-buttons .btn');
+    if (heroButtons[0]) heroButtons[0].textContent = translations[lang]['hero-btn-services'];
+    if (heroButtons[1]) heroButtons[1].textContent = translations[lang]['hero-btn-contact'];
+    
+    // Update stats
+    const statLabels = document.querySelectorAll('.stat-label');
+    if (statLabels[0]) statLabels[0].textContent = translations[lang]['stat-disciplines'];
+    if (statLabels[1]) statLabels[1].textContent = translations[lang]['stat-years'];
+    if (statLabels[2]) statLabels[2].textContent = translations[lang]['stat-competitions'];
+    
+    // Update about section
+    const aboutSection = document.querySelector('#sobre-mi');
+    if (aboutSection) {
+        const tag = aboutSection.querySelector('.section-tag');
+        const title = aboutSection.querySelector('.section-title');
+        const aboutSubtitle = aboutSection.querySelector('.about-text h3');
+        const paragraphs = aboutSection.querySelectorAll('.about-text > p');
+        
+        if (tag) tag.textContent = translations[lang]['about-tag'];
+        if (title) title.textContent = translations[lang]['about-title'];
+        if (aboutSubtitle) aboutSubtitle.textContent = translations[lang]['about-subtitle'];
+        if (paragraphs[0]) paragraphs[0].textContent = translations[lang]['about-p1'];
+        if (paragraphs[1]) paragraphs[1].textContent = translations[lang]['about-p2'];
+        if (paragraphs[2]) paragraphs[2].textContent = translations[lang]['about-p3'];
+        if (paragraphs[3]) paragraphs[3].textContent = translations[lang]['about-p4'];
+        
+        const infoItems = aboutSection.querySelectorAll('.info-item');
+        if (infoItems[0]) {
+            infoItems[0].querySelector('.label').textContent = translations[lang]['about-dob-label'];
+            infoItems[0].querySelector('.value').textContent = translations[lang]['about-dob-value'];
+        }
+        if (infoItems[1]) {
+            infoItems[1].querySelector('.label').textContent = translations[lang]['about-nationality-label'];
+            infoItems[1].querySelector('.value').textContent = translations[lang]['about-nationality-value'];
+        }
+        if (infoItems[2]) {
+            infoItems[2].querySelector('.label').textContent = translations[lang]['about-profession-label'];
+            infoItems[2].querySelector('.value').textContent = translations[lang]['about-profession-value'];
+        }
+        
+        const expBadge = aboutSection.querySelector('.experience-badge .text');
+        if (expBadge) expBadge.textContent = translations[lang]['experience-years'];
+    }
+    
+    // Update career section
+    const careerSection = document.querySelector('#trayectoria');
+    if (careerSection) {
+        const tag = careerSection.querySelector('.section-tag');
+        const title = careerSection.querySelector('.section-title');
+        
+        if (tag) tag.textContent = translations[lang]['career-tag'];
+        if (title) title.textContent = translations[lang]['career-title'];
+        
+        const tabBtns = careerSection.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            const tab = btn.getAttribute('data-tab');
+            if (tab === 'triatlon') btn.innerHTML = '<i class="fas fa-medal"></i> ' + translations[lang]['tab-triatlon'];
+            if (tab === 'ciclismo') btn.innerHTML = '<i class="fas fa-bicycle"></i> ' + translations[lang]['tab-ciclismo'];
+            if (tab === 'baloncesto') btn.innerHTML = '<i class="fas fa-basketball-ball"></i> ' + translations[lang]['tab-baloncesto'];
+        });
+        
+        // Update badges
+        const triatlonBadge = document.querySelector('#triatlon .sport-badge');
+        if (triatlonBadge) triatlonBadge.textContent = translations[lang]['triatlon-badge'];
+        
+        const ciclismoBadge = document.querySelector('#ciclismo .sport-badge');
+        if (ciclismoBadge) ciclismoBadge.textContent = translations[lang]['cycling-badge'];
+        
+        const baloncestoBadge = document.querySelector('#baloncesto .sport-badge');
+        if (baloncestoBadge) baloncestoBadge.textContent = translations[lang]['basketball-badge'];
+        
+        const objTitle = document.querySelector('.objectives h4');
+        if (objTitle) objTitle.innerHTML = '<i class="fas fa-bullseye"></i> ' + translations[lang]['objectives-title'];
+    }
+    
+    // Update sponsors section
+    const sponsorsSection = document.querySelector('#sponsors');
+    if (sponsorsSection) {
+        const tag = sponsorsSection.querySelector('.section-tag');
+        const title = sponsorsSection.querySelector('.section-title');
+        
+        if (tag) tag.textContent = translations[lang]['sponsors-tag'];
+        if (title) title.textContent = translations[lang]['sponsors-title'];
+    }
+    
+    // Update services section
+    const servicesSection = document.querySelector('#servicios');
+    if (servicesSection) {
+        const tag = servicesSection.querySelector('.section-tag');
+        const title = servicesSection.querySelector('.section-title');
+        const subtitle = servicesSection.querySelector('.section-subtitle');
+        
+        if (tag) tag.textContent = translations[lang]['services-tag'];
+        if (title) title.textContent = translations[lang]['services-title'];
+        if (subtitle) subtitle.textContent = translations[lang]['services-subtitle'];
+        
+        const serviceCards = servicesSection.querySelectorAll('.service-card');
+        if (serviceCards[0]) {
+            serviceCards[0].querySelector('h3').textContent = translations[lang]['service1-title'];
+            serviceCards[0].querySelector('p').textContent = translations[lang]['service1-desc'];
+            const features = serviceCards[0].querySelectorAll('.service-features li');
+            features[0].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service1-f1'];
+            features[1].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service1-f2'];
+            features[2].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service1-f3'];
+            features[3].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service1-f4'];
+            serviceCards[0].querySelector('.service-btn').textContent = translations[lang]['service-btn'];
+        }
+        if (serviceCards[1]) {
+            const featuredBadge = serviceCards[1].querySelector('.featured-badge');
+            if (featuredBadge) featuredBadge.textContent = translations[lang]['popular'];
+            serviceCards[1].querySelector('h3').textContent = translations[lang]['service2-title'];
+            const paragraphs = serviceCards[1].querySelectorAll('p');
+            paragraphs[0].textContent = translations[lang]['service2-desc'];
+            const features = serviceCards[1].querySelectorAll('.service-features li');
+            features[0].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service2-f1'];
+            features[1].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service2-f2'];
+            features[2].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service2-f3'];
+            features[3].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service2-f4'];
+            serviceCards[1].querySelector('.service-btn').textContent = translations[lang]['service-btn'];
+        }
+        if (serviceCards[2]) {
+            serviceCards[2].querySelector('h3').textContent = translations[lang]['service3-title'];
+            serviceCards[2].querySelector('p').textContent = translations[lang]['service3-desc'];
+            const features = serviceCards[2].querySelectorAll('.service-features li');
+            features[0].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service3-f1'];
+            features[1].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service3-f2'];
+            features[2].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service3-f3'];
+            features[3].innerHTML = '<i class="fas fa-check"></i> ' + translations[lang]['service3-f4'];
+            serviceCards[2].querySelector('.service-btn').textContent = translations[lang]['service-btn'];
+        }
+    }
+    
+    // Update gallery section
+    const gallerySection = document.querySelector('#galeria');
+    if (gallerySection) {
+        const tag = gallerySection.querySelector('.section-tag');
+        const title = gallerySection.querySelector('.section-title');
+        
+        if (tag) tag.textContent = translations[lang]['gallery-tag'];
+        if (title) title.textContent = translations[lang]['gallery-title'];
+    }
+    
+    // Update contact section
+    const contactSection = document.querySelector('#contacto');
+    if (contactSection) {
+        const tag = contactSection.querySelector('.section-tag');
+        const title = contactSection.querySelector('.section-title');
+        const desc = contactSection.querySelector('.section-header p');
+        
+        if (tag) tag.textContent = translations[lang]['contact-tag'];
+        if (title) title.textContent = translations[lang]['contact-title'];
+        if (desc) desc.textContent = translations[lang]['contact-desc'];
+        
+        // Form labels
+        const formGroups = contactSection.querySelectorAll('.form-group');
+        formGroups[0].querySelector('label').textContent = translations[lang]['form-name'];
+        formGroups[1].querySelector('label').textContent = translations[lang]['form-email'];
+        formGroups[2].querySelector('label').textContent = translations[lang]['form-phone'];
+        formGroups[3].querySelector('label').textContent = translations[lang]['form-service'];
+        formGroups[4].querySelector('label').textContent = translations[lang]['form-message'];
+        
+        // Select options
+        const selectOptions = contactSection.querySelectorAll('#service option');
+        if (selectOptions[1]) selectOptions[1].textContent = translations[lang]['form-opt1'];
+        if (selectOptions[2]) selectOptions[2].textContent = translations[lang]['form-opt2'];
+        if (selectOptions[3]) selectOptions[3].textContent = translations[lang]['form-opt3'];
+        if (selectOptions[4]) selectOptions[4].textContent = translations[lang]['form-opt4'];
+        
+        // Submit button
+        const submitBtn = contactSection.querySelector('.submit-btn span');
+        if (submitBtn) submitBtn.textContent = translations[lang]['form-submit'];
+    }
+    
+    // Update footer
+    const footer = document.querySelector('.footer');
+    if (footer) {
+        const tagline = footer.querySelector('.footer-tagline');
+        const rights = footer.querySelector('.footer-bottom p');
+        
+        if (tagline) tagline.textContent = translations[lang]['footer-tagline'];
+        if (rights) rights.innerHTML = '&copy; ' + translations[lang]['footer-rights'];
+    }
+    
+    // Update active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+}
+
+// DOM Elements
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
 
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
@@ -11,49 +425,43 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ===== MOBILE MENU =====
+// Mobile menu toggle
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
 });
 
-// Close menu when clicking a link
-document.querySelectorAll('.nav-link').forEach(link => {
+// Close mobile menu on link click
+navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
 });
 
-// ===== SMOOTH SCROLL =====
+// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+            const offsetTop = target.offsetTop - 80;
             window.scrollTo({
-                top: offsetPosition,
+                top: offsetTop,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// ===== CAREER TABS =====
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
-
+// Career tabs functionality
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Remove active from all buttons and contents
+        // Remove active class from all buttons and contents
         tabBtns.forEach(b => b.classList.remove('active'));
         tabContents.forEach(c => c.classList.remove('active'));
         
-        // Add active to clicked button
+        // Add active class to clicked button
         btn.classList.add('active');
         
         // Show corresponding content
@@ -62,7 +470,7 @@ tabBtns.forEach(btn => {
     });
 });
 
-// ===== LIGHTBOX =====
+// Lightbox functionality
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = lightbox.querySelector('.lightbox-image');
 const lightboxClose = lightbox.querySelector('.lightbox-close');
@@ -71,46 +479,36 @@ const lightboxNext = lightbox.querySelector('.lightbox-next');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
 let currentImageIndex = 0;
-const images = [];
+const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
 
 galleryItems.forEach((item, index) => {
-    const img = item.querySelector('img');
-    images.push(img.src);
-    
     item.addEventListener('click', () => {
         currentImageIndex = index;
-        openLightbox(img.src);
+        lightboxImage.src = images[currentImageIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
 });
 
-function openLightbox(src) {
-    lightboxImage.src = src;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
+lightboxClose.addEventListener('click', () => {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
-}
+});
 
-function showPrevImage() {
+lightboxPrev.addEventListener('click', () => {
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
     lightboxImage.src = images[currentImageIndex];
-}
+});
 
-function showNextImage() {
+lightboxNext.addEventListener('click', () => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     lightboxImage.src = images[currentImageIndex];
-}
-
-lightboxClose.addEventListener('click', closeLightbox);
-lightboxPrev.addEventListener('click', showPrevImage);
-lightboxNext.addEventListener('click', showNextImage);
+});
 
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
-        closeLightbox();
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
     }
 });
 
@@ -118,64 +516,60 @@ lightbox.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
     
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') showPrevImage();
-    if (e.key === 'ArrowRight') showNextImage();
+    if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    } else if (e.key === 'ArrowLeft') {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        lightboxImage.src = images[currentImageIndex];
+    } else if (e.key === 'ArrowRight') {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        lightboxImage.src = images[currentImageIndex];
+    }
 });
 
-// ===== CONTACT FORM =====
+// Contact form handling
 const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', async (e) => {
+contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const service = formData.get('service');
-    const message = formData.get('message');
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
     
-    // Disable submit button while sending
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span>Enviando...</span><i class="fas fa-spinner fa-spin"></i>';
-    submitBtn.disabled = true;
+    // Create WhatsApp message
+    const whatsappMessage = encodeURIComponent(
+        `*Nuevo mensaje desde la web*\n\n` +
+        `*Nombre:* ${name}\n` +
+        `*Email:* ${email}\n` +
+        `*Teléfono:* ${phone || 'No proporcionado'}\n` +
+        `*Servicio:* ${service}\n` +
+        `*Mensaje:* ${message}`
+    );
     
-    // 1. Send to Email via Formspree
-    try {
-        await fetch('https://formspree.io/f/Fernandatapia@live.cl', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-    } catch (error) {
-        console.log('Email sending attempted');
-    }
-    
-    // 2. Create WhatsApp message
-    const whatsappMessage = `Â¡Hola Fernanda! ðŸ‘‹%0A%0A` +
-        `*Nombre:* ${name}%0A` +
-        `*Email:* ${email}%0A` +
-        `${phone ? `*TelÃ©fono:* ${phone}%0A` : ''}` +
-        `*Servicio de interÃ©s:* ${service}%0A%0A` +
-        `*Mensaje:*%0A${message}`;
-    
-    // 3. Open WhatsApp
+    // Open WhatsApp
     window.open(`https://wa.me/56992313861?text=${whatsappMessage}`, '_blank');
     
-    // Reset form and button
-    submitBtn.innerHTML = '<span>Â¡Mensaje enviado!</span><i class="fas fa-check"></i>';
-    setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        contactForm.reset();
-    }, 2000);
+    // Also submit to Formspree for email backup
+    fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+    
+    // Reset form
+    contactForm.reset();
+    
+    // Show success message
+    alert(currentLang === 'es' ? '¡Mensaje enviado! Te contactaré pronto.' : 'Message sent! I will contact you soon.');
 });
 
-// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+// Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -185,260 +579,24 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.service-card, .achievement-category, .triatlon-card, .gallery-item').forEach(el => {
+document.querySelectorAll('.section-header, .about-content, .service-card, .gallery-item, .contact-wrapper, .sponsor-card').forEach(el => {
     observer.observe(el);
 });
 
-// ===== ACTIVE NAV LINK ON SCROLL =====
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// ===== COUNTER ANIMATION =====
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    function updateCounter() {
-        start += increment;
-        if (start < target) {
-            element.textContent = Math.floor(start) + (element.dataset.suffix || '');
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target + (element.dataset.suffix || '');
-        }
-    }
-    
-    updateCounter();
-}
-
-// Animate stats when they come into view
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.textContent);
-                if (!isNaN(target)) {
-                    animateCounter(stat, target);
-                }
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
-}
-
-// ===== PARALLAX EFFECT ON HERO =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
-    }
-});
-
-console.log('ðŸŠâ€â™€ï¸ðŸš´â€â™€ï¸ðŸƒâ€â™€ï¸ Fernanda Tapia Santander - Website loaded successfully!');
-
-// ===== LANGUAGE SWITCHER =====
-const langBtns = document.querySelectorAll('.lang-btn');
-const translatableElements = document.querySelectorAll('[data-es][data-en]');
-
-// Translations for static content
-const translations = {
-    es: {
-        heroSubtitle: 'Triatleta Semi-Pro  Profesora de Educación Física  Licenciada en Educación',
-        heroDescription: 'Ex Seleccionada Nacional de Baloncesto y Ciclismo en Ruta. Profesora de Educación Física dedicada a impulsar el rendimiento deportivo.',
-        btnServices: 'Mis Servicios',
-        btnContact: 'Contáctame',
-        statDisciplines: 'Disciplinas',
-        statYears: 'Años en Deporte',
-        statCompetitions: 'Competencias',
-        aboutTag: 'Conóceme',
-        aboutTitle: 'Sobre Mí',
-        aboutSubtitle: 'Pasión por el deporte de alto rendimiento',
-        careerTag: 'Mi Historia',
-        careerTitle: 'Trayectoria Deportiva',
-        sponsorsTag: 'Confían en mí',
-        sponsorsTitle: 'Mis Auspiciadores',
-        servicesTag: 'Lo que ofrezco',
-        servicesTitle: 'Mis Servicios',
-        servicesSubtitle: 'Servicios profesionales para mejorar tu rendimiento deportivo',
-        galleryTag: 'Momentos',
-        galleryTitle: 'Galería',
-        contactTag: 'Hablemos',
-        contactTitle: 'Contacto',
-        contactDescription: '¿Listo para llevar tu rendimiento al siguiente nivel? Contáctame y comencemos a trabajar juntos en tus objetivos deportivos.',
-        formName: 'Nombre completo',
-        formEmail: 'Email',
-        formPhone: 'Teléfono (opcional)',
-        formService: 'Servicio de interés',
-        formMessage: 'Tu mensaje',
-        formSubmit: 'Enviar mensaje',
-        scroll: 'Scroll'
-    },
-    en: {
-        heroSubtitle: 'Semi-Pro Triathlete  Physical Education Teacher  Education Graduate',
-        heroDescription: 'Former National Team Member in Basketball and Road Cycling. Physical Education Teacher dedicated to boosting athletic performance.',
-        btnServices: 'My Services',
-        btnContact: 'Contact Me',
-        statDisciplines: 'Disciplines',
-        statYears: 'Years in Sports',
-        statCompetitions: 'Competitions',
-        aboutTag: 'Meet Me',
-        aboutTitle: 'About Me',
-        aboutSubtitle: 'Passion for high performance sports',
-        careerTag: 'My Story',
-        careerTitle: 'Sports Career',
-        sponsorsTag: 'They Trust Me',
-        sponsorsTitle: 'My Sponsors',
-        servicesTag: 'What I Offer',
-        servicesTitle: 'My Services',
-        servicesSubtitle: 'Professional services to improve your athletic performance',
-        galleryTag: 'Moments',
-        galleryTitle: 'Gallery',
-        contactTag: 'Let\'s Talk',
-        contactTitle: 'Contact',
-        contactDescription: 'Ready to take your performance to the next level? Contact me and let\'s start working together on your athletic goals.',
-        formName: 'Full name',
-        formEmail: 'Email',
-        formPhone: 'Phone (optional)',
-        formService: 'Service of interest',
-        formMessage: 'Your message',
-        formSubmit: 'Send message',
-        scroll: 'Scroll'
-    }
-};
-
-function switchLanguage(lang) {
-    // Update active button
-    langBtns.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.lang === lang) {
-            btn.classList.add('active');
-        }
-    });
-    
-    // Update nav links
-    translatableElements.forEach(el => {
-        el.textContent = el.dataset[lang];
-    });
-    
-    // Update other content
-    const t = translations[lang];
-    
-    // Hero section
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    if (heroSubtitle) heroSubtitle.textContent = t.heroSubtitle;
-    
-    const heroDesc = document.querySelector('.hero-description');
-    if (heroDesc) heroDesc.textContent = t.heroDescription;
-    
-    // Buttons
-    const btnPrimary = document.querySelector('.hero-buttons .btn-primary');
-    if (btnPrimary) btnPrimary.textContent = t.btnServices;
-    
-    const btnSecondary = document.querySelector('.hero-buttons .btn-secondary');
-    if (btnSecondary) btnSecondary.textContent = t.btnContact;
-    
-    // Stats
-    const statLabels = document.querySelectorAll('.stat-label');
-    if (statLabels.length >= 3) {
-        statLabels[0].textContent = t.statDisciplines;
-        statLabels[1].textContent = t.statYears;
-        statLabels[2].textContent = t.statCompetitions;
-    }
-    
-    // Section tags and titles
-    const sectionTags = document.querySelectorAll('.section-tag');
-    const sectionTitles = document.querySelectorAll('.section-title');
-    
-    // About
-    if (sectionTags[0]) sectionTags[0].textContent = t.aboutTag;
-    if (sectionTitles[0]) sectionTitles[0].textContent = t.aboutTitle;
-    const aboutH3 = document.querySelector('.about-text h3');
-    if (aboutH3) aboutH3.textContent = t.aboutSubtitle;
-    
-    // Career
-    if (sectionTags[1]) sectionTags[1].textContent = t.careerTag;
-    if (sectionTitles[1]) sectionTitles[1].textContent = t.careerTitle;
-    
-    // Sponsors
-    if (sectionTags[2]) sectionTags[2].textContent = t.sponsorsTag;
-    if (sectionTitles[2]) sectionTitles[2].textContent = t.sponsorsTitle;
-    
-    // Services
-    if (sectionTags[3]) sectionTags[3].textContent = t.servicesTag;
-    if (sectionTitles[3]) sectionTitles[3].textContent = t.servicesTitle;
-    const servicesSubtitle = document.querySelector('.services .section-subtitle');
-    if (servicesSubtitle) servicesSubtitle.textContent = t.servicesSubtitle;
-    
-    // Gallery
-    if (sectionTags[4]) sectionTags[4].textContent = t.galleryTag;
-    if (sectionTitles[4]) sectionTitles[4].textContent = t.galleryTitle;
-    
-    // Contact
-    if (sectionTags[5]) sectionTags[5].textContent = t.contactTag;
-    if (sectionTitles[5]) sectionTitles[5].textContent = t.contactTitle;
-    const contactDesc = document.querySelector('.contact-info p');
-    if (contactDesc) contactDesc.textContent = t.contactDescription;
-    
-    // Form labels
-    const formLabels = document.querySelectorAll('.form-group label');
-    if (formLabels.length >= 5) {
-        formLabels[0].textContent = t.formName;
-        formLabels[1].textContent = t.formEmail;
-        formLabels[2].textContent = t.formPhone;
-        formLabels[3].textContent = t.formService;
-        formLabels[4].textContent = t.formMessage;
-    }
-    
-    const submitBtn = document.querySelector('.submit-btn span');
-    if (submitBtn) submitBtn.textContent = t.formSubmit;
-    
-    // Scroll indicator
-    const scrollText = document.querySelector('.scroll-indicator span');
-    if (scrollText) scrollText.textContent = t.scroll;
-    
-    // Save preference
-    localStorage.setItem('preferredLang', lang);
-}
-
-// Event listeners for language buttons
-langBtns.forEach(btn => {
+// Language switcher event listeners
+document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        switchLanguage(btn.dataset.lang);
+        const lang = btn.getAttribute('data-lang');
+        switchLanguage(lang);
     });
 });
 
-// Always start in Spanish (default)
+// Initialize language - always start with Spanish
+document.addEventListener('DOMContentLoaded', () => {
+    switchLanguage('es');
+});
