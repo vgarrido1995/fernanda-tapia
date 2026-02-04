@@ -803,7 +803,7 @@ img {
 
 .sponsor-card {
     background: #fff;
-    padding: 25px 35px;
+    padding: 40px 50px;
     border-radius: 15px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -818,8 +818,8 @@ img {
 }
 
 .sponsor-card img {
-    max-height: 100px;
-    max-width: 180px;
+    max-height: 180px;
+    max-width: 280px;
     object-fit: contain;
     filter: grayscale(0%);
     transition: var(--transition);
@@ -1498,3 +1498,5 @@ img {
         padding: 25px;
     }
 }
+
+
